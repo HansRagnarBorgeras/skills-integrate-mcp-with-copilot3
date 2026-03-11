@@ -16,7 +16,6 @@ body {
 }
 
 header {
-  text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
@@ -24,8 +23,70 @@ header {
   border-radius: 5px;
 }
 
+.header-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px;
+  text-align: left;
+}
+
 header h1 {
   margin-bottom: 10px;
+}
+
+.account-panel {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.account-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.account-button:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.account-icon {
+  font-size: 18px;
+}
+
+.auth-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  width: min(320px, calc(100vw - 60px));
+  padding: 16px;
+  border-radius: 10px;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  z-index: 5;
+}
+
+.auth-status {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.auth-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.secondary-button {
+  background-color: #eceff8;
+  color: #1a237e;
+}
+
+.secondary-button:hover {
+  background-color: #dfe5f7;
 }
 
 main {
@@ -111,18 +172,18 @@ section h3 {
 }
 
 .delete-btn {
-  background: none;
-  border: none;
+  background-color: #ffebee;
+  border: 1px solid #ef9a9a;
   color: #c62828;
   cursor: pointer;
-  font-size: 14px;
-  padding: 2px 5px;
+  font-size: 12px;
+  padding: 4px 8px;
   transition: all 0.2s;
-  border-radius: 3px;
+  border-radius: 999px;
 }
 
 .delete-btn:hover {
-  background-color: #ffebee;
+  background-color: #ffcdd2;
 }
 
 .participants-section p {
@@ -147,6 +208,32 @@ section h3 {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+}
+
+.teacher-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: #1a237e;
+  background-color: #e8eaf6;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.helper-text {
+  margin-bottom: 16px;
+  color: #555;
+}
+
+.disabled-form {
+  opacity: 0.65;
+}
+
+.disabled-form button,
+.disabled-form input,
+.disabled-form select {
+  cursor: not-allowed;
 }
 
 button {
@@ -197,4 +284,34 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 12px;
+  }
+
+  .header-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .account-panel {
+    width: 100%;
+  }
+
+  .account-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .auth-panel {
+    position: static;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .auth-actions {
+    flex-direction: column;
+  }
 }

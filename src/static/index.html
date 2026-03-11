@@ -8,8 +8,38 @@
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <div class="header-bar">
+        <div>
+          <h1>Mergington High School</h1>
+          <h2>Extracurricular Activities</h2>
+        </div>
+
+        <div class="account-panel">
+          <button id="account-button" class="account-button" type="button" aria-expanded="false">
+            <span class="account-icon">&#128100;</span>
+            <span id="account-button-label">Teacher Login</span>
+          </button>
+
+          <div id="auth-panel" class="auth-panel hidden">
+            <p id="auth-status" class="auth-status">Teachers can log in to manage registrations.</p>
+
+            <form id="login-form">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required placeholder="teacher username" />
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required placeholder="password" />
+              </div>
+              <div class="auth-actions">
+                <button id="login-button" type="submit">Log In</button>
+                <button id="logout-button" type="button" class="secondary-button hidden">Log Out</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -22,7 +52,10 @@
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+        <h3>Register a Student <span class="teacher-badge">Teachers only</span></h3>
+        <p id="teacher-helper" class="helper-text">
+          Log in as a teacher to register or remove students from activities.
+        </p>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
